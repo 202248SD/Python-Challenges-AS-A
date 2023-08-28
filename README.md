@@ -1,2 +1,2 @@
 # Python-Challenges-AS
-Any AS level python challenges i've done so far
+Any AS or A level python challenges i've done so far
