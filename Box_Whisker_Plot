@@ -1,0 +1,58 @@
+import turtle
+t = turtle.Turtle()
+t.speed(0)
+min = int(input("what is the minimum value?"))
+max = int(input("what is the maximum value?"))
+q1 = int(input("what is the lower quartile?"))
+q3 = int(input("what is the upper quartile?"))
+med = int(input("what is the median?"))
+range = max-min
+step = 400/range
+
+t.right(90)
+
+t.penup()
+t.goto(-200,30)
+t.pendown()
+t.fd(60)
+
+t.penup()
+t.goto(200,30)
+t.pendown()
+t.fd(60)
+
+t.penup()
+t.goto(-200+(q1-min)*step,50)
+t.pendown()
+t.fd(100)
+
+t.penup()
+t.goto(-200+(med-min)*step,50)
+t.pendown()
+t.fd(100)
+
+t.penup()
+t.goto(-200+(q3-min)*step,50)
+t.pendown()
+t.fd(100)
+
+t.left(90)
+
+t.penup()
+t.goto(-200+(q1-min)*step,50)
+t.pendown()
+t.fd((q3-q1)*step)
+
+t.penup()
+t.goto(-200+(q1-min)*step,-50)
+t.pendown()
+t.fd((q3-q1)*step)
+
+t.penup()
+t.goto(-200,0)
+t.pendown()
+t.fd(step*(q1-min))
+t.penup()
+t.fd(step*(q3-q1))
+t.pendown()
+t.fd(step*(max-q3))
